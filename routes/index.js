@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
+import express from "express";
+ 
+import { 
+    getAllProducts,
+    // createProduct,
+    getProductById,
+    // updateProduct,
+    // deleteProduct
+} from "../controllers/Events.js";
+ 
+const router = express.Router();
+ 
+router.get('/', getAllProducts);
+router.get('/:id', getProductById);
+// router.post('/', createProduct);
+// router.patch('/:id', updateProduct);
+// router.delete('/:id', deleteProduct);
+ 
+export default router;
