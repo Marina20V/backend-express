@@ -1,19 +1,19 @@
 import express from "express";
  
 import { 
-    getAllProducts,
-    // createProduct,
-    getProductById,
-    // updateProduct,
-    // deleteProduct
+    getAllEvents,
+    createEvent,
+    getEventById,
+    updateEvent,
+    deleteEvent
 } from "../controllers/Events.js";
  
 const router = express.Router();
  
-router.get('/', getAllProducts);
-router.get('/:id', getProductById);
-// router.post('/', createProduct);
-// router.patch('/:id', updateProduct);
-// router.delete('/:id', deleteProduct);
+router.get('/', getAllEvents);
+router.get('/:id', getEventById);
+router.post('/', createEvent);
+router.patch('/:id', updateEvent);
+router.delete('/:id', deleteEvent);
  
 export default router;

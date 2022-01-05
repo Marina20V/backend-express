@@ -3,9 +3,10 @@ import db from "../config/database.js";
  
 const { DataTypes } = Sequelize;
  
-const Product = db.define('Events',{
+const Event = db.define('Events',{
     id:{
-        type: DataTypes.INT
+        type: DataTypes.INTEGER,
+        primaryKey: true
     },
     title:{
         type: DataTypes.STRING
@@ -22,9 +23,6 @@ const Product = db.define('Events',{
     cat_id:{
         type: DataTypes.STRING
     },
-    date:{
-        type: DataTypes.STRING
-    },
     organizer_id:{
         type: DataTypes.STRING
     },
@@ -36,7 +34,13 @@ const Product = db.define('Events',{
     },
     img:{
         type: DataTypes.STRING
-    }
+    },
+    createdAt:{
+        type: DataTypes.STRING
+    },
+    updatedAt:{
+        type: DataTypes.STRING
+    },
 });
  
-export default Product;
+export default Event;

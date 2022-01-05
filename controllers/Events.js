@@ -10,6 +10,7 @@ export const getAllEvents = async (req, res) => {
 }
  
 export const getEventById = async (req, res) => {
+    debugger;
     try {
         const event = await Event.findAll({
             where: {
