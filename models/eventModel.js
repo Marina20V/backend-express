@@ -7,23 +7,36 @@ const Product = db.define('Events',{
     id:{
         type: DataTypes.INT
     },
-    price:{
-        type: DataTypes.DOUBLE
+    title:{
+        type: DataTypes.STRING
     },
-    id:{
-        type: DataTypes.INT
+    full_desc:{
+        type: DataTypes.STRING
     },
-    price:{
-        type: DataTypes.DOUBLE
+    location:{
+        type: DataTypes.STRING
     },
-    id:{
-        type: DataTypes.INT
+    date:{
+        type: DataTypes.STRING
     },
-    price:{
-        type: DataTypes.DOUBLE
+    cat_id:{
+        type: DataTypes.STRING
+    },
+    date:{
+        type: DataTypes.STRING
+    },
+    organizer_id:{
+        type: DataTypes.STRING
+    },
+    subcat_type:{
+        type: DataTypes.STRING
+    },
+    subcat_entry:{
+        type: DataTypes.STRING
+    },
+    img:{
+        type: DataTypes.STRING
     }
-},{
-    freezeTableName: true
 });
  
 export default Product;
