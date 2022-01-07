@@ -32,7 +32,7 @@ const Event = db.define('Events',{
     subcat_entry:{
         type: DataTypes.STRING
     },
-    img:{
+    web_url:{
         type: DataTypes.STRING
     },
     createdAt:{
