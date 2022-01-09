@@ -72,7 +72,7 @@ try {
 
 
 //upload endpoint
-app.post('/upload', (req, res) => {
+app.post('/uploads', (req, res) => {
     if(req.files === null) {
         return res.status(400).json ({msg: 'No file uploaded'});
     }
@@ -93,7 +93,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/events', eventRoutes);
 app.use('/categories', categoryRoutes);
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static('public/uploads'));
 
 
 app.listen(5000, () => console.log('Server running at port 5000'));
