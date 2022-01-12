@@ -8,11 +8,12 @@ import {
     deleteEvent
 } from "../controllers/Events.js";
  
+import uploadImg from '../multer.js';
 const router = express.Router();
  
 router.get('/', getAllEvents);
 router.get('/:id', getEventById);
-router.post('/', createEvent);
+router.post('/', uploadImg.single('file'), createEvent);
 router.patch('/:id', updateEvent);
 router.delete('/:id', deleteEvent);
  

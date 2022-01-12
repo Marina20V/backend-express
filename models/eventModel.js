@@ -23,6 +23,9 @@ const Event = db.define('Events',{
     cat_id:{
         type: DataTypes.STRING
     },
+    img_url:{
+        type: DataTypes.STRING
+    },
     organizer_id:{
         type: DataTypes.STRING
     },
@@ -32,14 +35,14 @@ const Event = db.define('Events',{
     subcat_entry:{
         type: DataTypes.STRING
     },
-    web_url:{
+    website:{
         type: DataTypes.STRING
     },
     createdAt:{
-        type: DataTypes.STRING
+        type: DataTypes.DATE
     },
     updatedAt:{
-        type: DataTypes.STRING
+        type: DataTypes.DATE
     },
 });
  

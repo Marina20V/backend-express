@@ -23,15 +23,50 @@ export const getEventById = async (req, res) => {
     }  
 }
  
+
 export const createEvent = async (req, res) => {
+    const {title,         
+        fullDesc,
+        location,
+        date,
+        category,
+        organizerId,
+        subcatType,
+        subcatEntry,
+        website} = req.body;
+
+        const file = req.file.filename;
+
+    // console.log(req.body);
+
+    const eventsBody = {
+        title,
+        full_desc: fullDesc,
+        location,
+        date,
+        category,
+        organizer_id: organizerId,
+        subcat_type: subcatType,
+        subcat_entry:subcatEntry,
+        website,
+        img_url: file
+    }
+
+    console.log(eventsBody);
+
+    
     try {
-        await Event.create(req.body);
+        await Event.create(eventsBody);
+
         res.json({
             "message": "Event Created"
         });
     } catch (error) {
         res.json({ message: error.message });
     }  
+
+    console.log();
+
 }
  
 export const updateEvent = async (req, res) => {

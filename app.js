@@ -47,7 +47,7 @@ import db from "./config/database.js";
 import eventRoutes from "./routes/index.js";
 import categoryRoutes from "./routes/category.js";
 import cors from "cors";
-import fileUpload from 'express-fileupload';
+// import fileUpload from 'express-fileupload';
 // import { fileURLToPath } from 'url';
 // import { dirname } from 'path';
 
@@ -60,7 +60,7 @@ const __dirname = path.resolve();
 
 
 const app = express();
-app.use(fileUpload());
+// app.use(fileUpload());
 
 
 try {
@@ -72,28 +72,27 @@ try {
 
 
 //upload endpoint
-app.post('/uploads', (req, res) => {
-    if(req.files === null) {
-        return res.status(400).json ({msg: 'No file uploaded'});
-    }
+// app.post('/uploads', (req, res) => {
+//     if(req.files === null) {
+//         return res.status(400).json ({msg: 'No file uploaded'});
+//     }
 
-    const file = req.files.file;
-    file.mv(`${__dirname}/public/uploads/${file.name}`, err=> {
-        if (err) {
-            console.error(err);
-            // return res.status(500).send(err);
-        }
+//     const file = req.files.file;
+//     file.mv(`${__dirname}/public/uploads/${file.name}`, err=> {
+//         if (err) {
+//             console.error(err);
+//             // return res.status(500).send(err);
+//         }
 
-        res.json({fileName: file.name, filePath: `/uploads/${file.name}` });
-    });
+//         res.json({fileName: file.name, filePath: `/uploads/${file.name}` });
+//     });
 
-});
+// });
 
 app.use(cors());
 app.use(express.json());
 app.use('/events', eventRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/uploads', express.static('public/uploads'));
-
 
 app.listen(5000, () => console.log('Server running at port 5000'));
